@@ -1,0 +1,22 @@
+
+services:
+  - type: web
+    name: astro-freemium-bot
+    env: python
+    plan: free
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "python3 bot.py"
+    autoDeploy: true
+    envVars:
+      - key: TELEGRAM_BOT_TOKEN
+        sync: false
+      - key: MODE
+        value: auto
+      - key: TIMEZONE
+        value: Asia/Almaty
+      - key: DAILY_FREE_LIMIT
+        value: "3"
+      - key: PLUS_URL
+        value: https://t.me/your_plus_landing_or_stars
+      - key: CONSULT_URL
+        value: https://t.me/your_consultation_contact
